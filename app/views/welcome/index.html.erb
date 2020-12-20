@@ -1,0 +1,10 @@
+<div id="welcome"></div>
+<%= javascript_pack_tag 'welcome'%>
+
+<h1>Welcome From ERB</h1>
+<%= javascript_pack_tag 'hello_react'%>
+
+<% @post.each do |post|%>
+  <h1> Title: <%= post.title -%></h1>
+  <div> Content: <%= post.content -%></div>
+<%end%>
