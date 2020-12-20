@@ -1,0 +1,51 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.5.3
+  Exclude:
+    - test/**/*
+    - bin/*
+    - script/*
+    - db/seeds/**/*
+    - db/schema.rb
+
+  NewCops: enable
+
+#################### Style ###############################
+
+Style/StringLiterals:
+  Description: Checks if uses of quotes match the configured preference.
+  Enabled: false
+
+Style/RedundantReturn:
+  Description: Don't use return where it's not required.
+  Enabled: true
+  AllowMultipleReturnValues: true
+
+Style/Documentation:
+  Enabled: false
+
+#################### Metrics ###############################
+
+Metrics/MethodLength:
+  Description: Avoid methods longer than 10 lines of code.
+  Max: 15
+
+Metrics/BlockLength:
+  Description: Avoid long blocks with many lines.
+  Exclude:
+    - db/schema.rb
+    - config/routes.rb
+    - config/environments/development.rb
+    - app/views/**/*.jbuilder
+
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
